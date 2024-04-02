@@ -12,9 +12,7 @@ namespace OrientacaoObjetos
             conta.DataAbertura = DateTime.Today;
             conta.Saldo = 0;
 
-            Console.WriteLine(conta.Numero);
-            Console.WriteLine(conta.DataAbertura);
-            Console.WriteLine(conta.Saldo);
+            conta.ExibirExtrato();
         }
     }
 }
