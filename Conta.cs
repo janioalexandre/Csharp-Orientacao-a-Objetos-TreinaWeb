@@ -11,8 +11,18 @@ namespace Contas
         public void ExibirExtrato()
         {
             Console.WriteLine($"Conta N:            { Numero }");
-            Console.WriteLine($"Data de Abertura:   { DataAbertura }");
-            Console.WriteLine($"Saldo:              { Saldo }");
+            Console.WriteLine($"Data de Abertura:   { DataAbertura.ToString("dd/MM/yyyy") }");
+            Console.WriteLine($"Saldo:              { Saldo.ToString("C") }");
+        }
+
+        public void Depositar (decimal valor)
+        {
+            Saldo += valor;
+        }
+
+        public void Sacar (decimal valor)
+        {
+            Saldo -= valor;
         }
     }
 }

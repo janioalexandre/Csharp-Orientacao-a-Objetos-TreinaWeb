@@ -13,6 +13,10 @@ namespace OrientacaoObjetos
             conta.Saldo = 0;
 
             conta.ExibirExtrato();
+            conta.Depositar(50);
+            conta.ExibirExtrato();
+            conta.Sacar(30);
+            conta.ExibirExtrato();
         }
     }
 }
