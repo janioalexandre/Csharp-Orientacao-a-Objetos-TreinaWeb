@@ -8,13 +8,14 @@ namespace Contas
         public DateTime DataAbertura;
         public decimal Saldo;
 
-        public void ExibirExtrato()
+        public string ExibirExtrato()
         {
-            Console.WriteLine($"Conta N:            { Numero }");
-            Console.WriteLine($"Data de Abertura:   { DataAbertura.ToString("dd/MM/yyyy") }");
-            Console.WriteLine($"Saldo:              { Saldo.ToString("C") }");
+            return  $"Conta N:            { Numero }{ Environment.NewLine }" + 
+                    $"Data de Abertura:   { DataAbertura.ToString("dd/MM/yyyy") }{ Environment.NewLine }" +
+                    $"Saldo:              { Saldo.ToString("C") }{ Environment.NewLine }" +
+                    "-------------------------------";
         }
-
+        
         public void Depositar (decimal valor)
         {
             Saldo += valor;
