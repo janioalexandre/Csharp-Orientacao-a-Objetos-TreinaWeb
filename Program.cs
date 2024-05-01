@@ -1,5 +1,4 @@
-﻿using System;
-using Contas;
+﻿using Contas;
 
 namespace OrientacaoObjetos
 {
@@ -8,13 +7,10 @@ namespace OrientacaoObjetos
         static void Main(string[] args)
         {
             var conta = new Conta();
-
-            conta.Numero = "001";
-            conta.DataAbertura = DateTime.Today;
-            conta.Saldo = 100;
-            
-            conta.RealizarEmprestimo(200, 10);
             Console.WriteLine(conta.ExibirExtrato());
+
+            var conta2 = new Conta("0001", DateTime.Now, 100);
+            Console.WriteLine(conta2.ExibirExtrato());
         }
     }
 }

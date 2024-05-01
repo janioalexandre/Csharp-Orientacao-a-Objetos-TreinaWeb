@@ -4,9 +4,24 @@ namespace Contas
 {
     public class Conta
     {
+        public static double TaxaRendimento = 0.5f;       
         public string Numero;
         public DateTime DataAbertura;
         public decimal Saldo;
+
+        public Conta()
+        {
+            Numero = DateTime.Now.ToString("yyyyMMddhhmmss");
+            DataAbertura = DateTime.Now;
+            Saldo = 0;
+        }
+
+        public Conta(string numero, DateTime dataAbertura, decimal saldo)
+        {
+            Numero = numero;
+            DataAbertura = dataAbertura;
+            Saldo = saldo;
+        }
 
         public string ExibirExtrato()
         {
@@ -36,6 +51,11 @@ namespace Contas
         {
             Saldo += valor;
             Console.WriteLine($"O valor { valor } foi creditado e será debitado em { parcelas } vezes.");
+        }
+
+        public static double CalcularRendimento(double capital, int meses)
+        {
+            return capital + Math.Pow(1 + TaxaRendimento, meses);
         }
     }
 }
